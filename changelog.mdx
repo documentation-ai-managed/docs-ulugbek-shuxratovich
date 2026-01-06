@@ -1,0 +1,115 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to Ulugbek Shuxratovich.
+---
+
+## Recent Updates
+
+Stay informed about all changes to Ulugbek Shuxratovich, your documentation space for organizing project docs. You receive detailed release notes here, grouped by version. Review new features, improvements, and fixes to keep your workflows up to date.
+
+<Callout kind="info">
+  Bookmark this page and check back regularly. Subscribe to notifications via your account settings to get alerts on major releases.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="zap" href="#v1-2-0">
+    Enhanced editing and collaboration tools.
+  </Card>
+  <Card title="v1.1.0" icon="settings" href="#v1-1-0">
+    Improved search and organization features.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v1-0-0">
+    Initial stable release with core functionality.
+  </Card>
+</Columns>
+
+<Update id="v1-2-0" label="2024-10-15" description="v1.2.0" tags={["feature", "improvement", "bugfix"]}>
+
+## New Features
+
+- Added real-time collaboration, allowing multiple users to edit documents simultaneously.
+- Introduced version history with diff viewer to compare changes easily.
+- New export options including PDF and Markdown formats.
+
+## Improvements
+
+- Optimized page load times by `>30%` for large documentation sites.
+- Enhanced search with fuzzy matching and advanced filters.
+
+## Bug Fixes
+
+- Fixed rendering issues with nested lists in MDX previews.
+- Resolved authentication errors during session timeouts.
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  // Example: Using the new collaboration API
+  const doc = await client.docs.get('project-guide');
+  await doc.inviteUser('user@example.com');
+  ```
+  ```python
+  # Example: Using the new collaboration API
+  doc = client.docs.get('project-guide')
+  doc.invite_user('user@example.com')
+  ```
+</CodeGroup>
+
+</Update>
+
+<Update id="v1-1-0" label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated full-text search across all documentation pages.
+- Added custom themes and brand color support (e.g., `#3B82F6`).
+
+## Improvements
+
+- Streamlined sidebar navigation for better project organization.
+
+## Bug Fixes
+
+- Corrected table rendering in mobile views.
+- Patched cross-site scripting vulnerabilities in user inputs.
+
+</Update>
+
+<Update id="v1-0-0" label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core MDX editor with live preview and syntax highlighting.
+- Project organization with folders and tags.
+- API access for programmatic document management.
+
+## Breaking Changes
+
+- Updated authentication to use `{API_KEY}` instead of legacy tokens. Migrate by generating a new key in settings.
+
+## Bug Fixes
+
+- Initial stability improvements for editor autosave.
+
+</Update>
+
+## Stay Updated
+
+Follow these steps to ensure you never miss an update.
+
+<Steps>
+  <Step title="Enable Notifications" icon="bell">
+    Go to your account settings and toggle changelog notifications.
+  </Step>
+  <Step title="Check Release Notes" icon="book-open">
+    Review detailed notes here and test new features in a sandbox project.
+  </Step>
+  <Step title="Contribute Feedback" icon="message-circle">
+    Share issues or suggestions via the feedback form at the bottom of this page.
+  </Step>
+</Steps>
+
+<ExpandableGroup>
+  <Expandable title="Upcoming Changes" default-open="true">
+    Plan for v1.3.0, which introduces AI-assisted content generation and webhook integrations. Watch this space for betas.
+  </Expandable>
+</ExpandableGroup>

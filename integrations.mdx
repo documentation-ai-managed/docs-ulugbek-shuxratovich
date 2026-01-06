@@ -1,0 +1,147 @@
+---
+title: Integrations and Extensions
+description: Connect Ulugbek Shuxratovich with third-party tools to enhance your documentation workflow.
+---
+
+## Overview
+
+Ulugbek Shuxratovich integrates seamlessly with popular third-party tools, webhooks, export options, and APIs. You extend your documentation workflow by connecting to version control systems, notification services, and custom scripts. Start with pre-built integrations or build your own using webhooks and the REST API.
+
+<Callout kind="tip">
+  Review your workspace permissions before setting up integrations. You need admin access for most configurations.
+</Callout>
+
+## Third-Party Integrations
+
+Connect Ulugbek Shuxratovich to essential tools for collaboration and automation.
+
+<Columns cols={3}>
+  <Card title="GitHub" icon="github" href="https://github.com">
+    Sync documentation changes with repositories. Push updates directly from your workspace.
+  </Card>
+  <Card title="Slack" icon="message-circle" href="https://slack.com">
+    Receive notifications for page updates and mentions in your channels.
+  </Card>
+  <Card title="Zapier" icon="zap" href="https://zapier.com">
+    Automate workflows with 5000+ apps using no-code zaps.
+  </Card>
+</Columns>
+
+## Webhook Setup
+
+Set up webhooks to trigger actions on events like page creation or updates.
+
+<Steps>
+  <Step title="Create Webhook" icon="plus">
+    Navigate to Workspace Settings > Integrations > Webhooks. Click "New Webhook".
+  </Step>
+  <Step title="Configure Events" icon="settings">
+    Select events such as `page.created` or `page.updated`. Add your endpoint URL.
+  </Step>
+  <Step title="Test and Save" icon="play">
+    Send a test payload. Verify receipt at your server, then save.
+  </Step>
+</Steps>
+
+<Request tabs="cURL" show-lines="true">
+```bash
+curl -X POST https://api.example.com/v1/webhooks \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "url": "https://your-webhook-url.com/webhook",
+    "events": ["page.created", "page.updated"]
+  }'
+```
+</Request>
+
+## Export and Import Options
+
+Export your documentation or import from external sources.
+
+<Tabs>
+  <Tab title="Markdown Export" icon="file-text">
+    Export pages as Markdown files for Git or static sites.
+    
+````markdown
+```bash
+curl -X GET "https://api.example.com/v1/pages/export/markdown?pageId=YOUR_PAGE_ID" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -o documentation.md
+```
+````
+  </Tab>
+  <Tab title="PDF Export" icon="file">
+    Generate PDF versions for sharing or printing.
+    
+````markdown
+```bash
+curl -X GET "https://api.example.com/v1/pages/export/pdf?pageId=YOUR_PAGE_ID" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  --output docs.pdf
+```
+````
+  </Tab>
+  <Tab title="Import Markdown" icon="upload">
+    Bulk import Markdown files into your workspace.
+    
+    Use the API endpoint with multipart form data for files.
+  </Tab>
+</Tabs>
+
+## API Access for Extensions
+
+Build custom extensions using the REST API. Authenticate with `YOUR_API_KEY`.
+
+<ParamField path="pageId" param-type="string" required="true">
+  Unique page identifier.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token: `Bearer YOUR_API_KEY`.
+</ParamField>
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+const response = await fetch('https://api.example.com/v1/pages', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY'
+  }
+});
+const pages = await response.json();
+console.log(pages);
+```
+
+```python
+import requests
+response = requests.get(
+    'https://api.example.com/v1/pages',
+    headers={'Authorization': 'Bearer YOUR_API_KEY'}
+)
+pages = response.json()
+print(pages)
+```
+</CodeGroup>
+
+<Response tabs="200">
+```json
+{
+  "pages": [
+    {
+      "id": "page_123",
+      "title": "Integrations Guide",
+      "updatedAt": "2024-10-15T10:00:00Z"
+    }
+  ]
+}
+```
+</Response>
+
+<Expandable title="Advanced API Rate Limits" default-open="false">
+  The API enforces 100 requests per minute. Monitor usage via response headers like `X-RateLimit-Remaining`.
+</Expandable>
+
+<Callout kind="info">
+  Explore the full API reference for more endpoints. Start with listing pages to test your integration.
+</Callout>

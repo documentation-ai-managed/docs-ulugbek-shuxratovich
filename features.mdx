@@ -1,0 +1,152 @@
+---
+title: Core Features
+description: Explore the essential capabilities for managing and organizing your project documentation effectively.
+---
+
+## Overview
+
+Ulugbek Shuxratovich provides powerful tools to streamline your documentation workflow. You organize documents hierarchically, manage projects efficiently, collaborate with teams seamlessly, and customize your space to fit your needs. These core features help you maintain a centralized hub for all project-related documentation.
+
+<Columns cols={2}>
+  <Card title="Document Organization" icon="folder" href="#document-organization">
+    Structure your docs with folders and pages for easy navigation.
+  </Card>
+  <Card title="Project Management" icon="calendar" href="#project-management">
+    Track progress, assign tasks, and set milestones.
+  </Card>
+  <Card title="Collaboration Tools" icon="users" href="#collaboration-tools">
+    Share, review, and co-edit documents in real-time.
+  </Card>
+  <Card title="Customization Options" icon="settings" href="#customization-options">
+    Tailor themes, layouts, and permissions to your preferences.
+  </Card>
+</Columns>
+
+## Document Organization
+
+Organize your documentation into intuitive folder structures and nested pages. You create hierarchies that mirror your project architecture, making content discovery effortless.
+
+<Steps>
+  <Step title="Create Folders" icon="folder-plus">
+    Navigate to your workspace root and select "New Folder". Name it descriptively, such as "API Reference".
+
+````bash
+# Example structure in your repo
+docs/
+  ├── api/
+  │   ├── endpoints.mdx
+  │   └── auth.mdx
+  └── guides/
+      └── quickstart.mdx
+````
+  </Step>
+  <Step title="Nest Pages" icon="file-plus">
+    Drag and drop pages within folders. Use the sidebar to reorder for optimal flow.
+  </Step>
+  <Step title="Search and Filter" icon="search">
+    Leverage the global search to find content across your hierarchy.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use consistent naming conventions like `{kebab-case}` for URLs to ensure clean links.
+</Callout>
+
+## Project Management
+
+Manage multiple projects within Ulugbek Shuxratovich by creating dedicated spaces. You assign tasks, track versions, and monitor progress directly from your docs.
+
+```javascript
+// Example: Fetch project status via API
+const response = await fetch('https://api.example.com/v1/projects/{projectId}', {
+  headers: {
+    'Authorization': `Bearer ${YOUR_API_KEY}`
+  }
+});
+const project = await response.json();
+console.log(project.status); // "active" | "archived"
+```
+
+Set milestones using the built-in timeline view, which integrates with your document updates.
+
+## Collaboration Tools
+
+Enable team collaboration with real-time editing, comments, and version history. You invite members, set roles, and resolve changes efficiently.
+
+<Tabs>
+  <Tab title="Invite Collaborators" icon="user-plus">
+    Go to Settings > Members and enter email addresses. Assign roles like "Editor" or "Viewer".
+  </Tab>
+  <Tab title="Review Changes" icon="eye">
+    Use inline comments on specific lines. Resolve threads to keep discussions organized.
+
+````markdown
+<!-- Example comment in MDX -->
+This section needs more examples.
+<!-- @reviewer: Can you add a Python snippet? -->
+````
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  All changes are tracked with blame information, similar to Git.
+</Callout>
+
+## Customization Options
+
+Tailor your documentation space with themes, custom domains, and advanced layouts. The brand color `#3B82F6` serves as the default accent.
+
+<CodeGroup tabs="JSON,YAML">
+```json
+{
+  "theme": {
+    "primaryColor": "#3B82F6",
+    "logo": "https://example.com/logo.png"
+  },
+  "navigation": {
+    "showSearch": true,
+    "sidebarCollapsible": true
+  }
+}
+```
+```yaml
+theme:
+  primaryColor: "#3B82F6"
+  logo: "https://example.com/logo.png"
+navigation:
+  showSearch: true
+  sidebarCollapsible: true
+```
+</CodeGroup>
+
+<Expandable title="Advanced Custom CSS" default-open="false">
+
+Inject custom styles via the config panel:
+
+```css
+:root {
+  --brand-color: #3B82F6;
+}
+
+.navbar {
+  background: var(--brand-color);
+}
+```
+
+</Expandable>
+
+These features empower you to build a scalable documentation system. Start by organizing your first project space today.
+
+## Next Steps
+
+<Columns cols={3}>
+  <Card title="Quickstart Guide" icon="rocket" href="/quickstart">
+    Set up your first document in minutes.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your space with API keys.
+  </Card>
+  <Card title="API Reference" icon="code" href="/api">
+    Integrate programmatically.
+  </Card>
+</Columns>

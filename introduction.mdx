@@ -1,0 +1,99 @@
+---
+title: Welcome to Ulugbek Shuxratovich
+description: Discover the overview of Ulugbek Shuxratovich, your default documentation space for organizing and managing project documentation.
+---
+
+## Overview
+
+Ulugbek Shuxratovich provides a centralized documentation space where you organize, manage, and share all your project documentation. Create pages, embed code examples, and collaborate seamlessly with your team. Customize themes and layouts to match your brand, ensuring consistency across all docs.
+
+This space supports rich MDX components for interactive guides, API references, and changelogs. Start by exploring key features below.
+
+## Key Features
+
+<Columns cols={3}>
+  <Card title="Rich Components" icon="components" href="#quick-start">
+    Build engaging docs with components like `<Steps>`, `<Tabs>`, and `<Callout>`. Add code examples, diagrams, and more without custom code.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="/changelog">
+    Track changes with built-in version history. Roll back edits and collaborate via pull requests.
+  </Card>
+  <Card title="Search & Navigation" icon="search" href="#quick-navigation">
+    Full-text search across all pages. Intuitive sidebar navigation keeps you oriented.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get up and running in minutes. Follow these steps to create your first documentation page.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+
+    Sign up at `https://ulugbekshuxratovich.com/register` with your email.
+
+  </Step>
+  <Step title="New Workspace" icon="plus">
+
+    Click **New Workspace** and name it after your project, like `my-project-docs`.
+
+  </Step>
+  <Step title="Add First Page" icon="file-plus">
+
+    Select **New Page**, choose `introduction.mdx`, and start editing with MDX syntax.
+
+    <CodeGroup tabs="CLI,Web">
+      ```bash
+      npx create-ulugbek@latest my-docs
+      cd my-docs
+      npm run dev
+      ```
+      ```typescript
+      // Embed in your app
+      import { UlugbekDocs } from '@ulugbek/docs';
+      <UlugbekDocs workspaceId="your-workspace-id" />
+      ```
+    </CodeGroup>
+
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Pro tip: Use the preview pane to see changes live as you edit.
+</Callout>
+
+## Quick Navigation
+
+Jump to essential sections to dive deeper.
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="rocket" href="/quickstart">
+    Set up your first workspace and page.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your docs with API keys and tokens.
+  </Card>
+  <Card title="Configuration" icon="settings" href="/configuration">
+    Customize themes and components.
+  </Card>
+  <Card title="Changelog" icon="git-commit" href="/changelog">
+    See what's new in recent updates.
+  </Card>
+</Columns>
+
+## Brand Guidelines
+
+Maintain consistency with Ulugbek Shuxratovich's brand.
+
+<Callout kind="info">
+
+- **Primary Color:** `#3B82F6` (use for buttons, links, and accents)
+- **Typography:** System fonts for performance
+- **Icons:** Lucide library – e.g., `zap`, `shield`, `book-open`
+- **Logo Usage:** Download from `/assets/logo.svg` and link to your homepage
+
+Avoid custom CSS overrides unless necessary. Test with dark/light modes.
+
+</Callout>
+
+Ready to build? Head to [Quickstart](/quickstart) for hands-on setup.
